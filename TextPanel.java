@@ -11,8 +11,9 @@ import javax.swing.JScrollPane;
 import javax.swing.BorderFactory;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.MouseInputListener;
-
-import java.io.File;
+import java.io.InputStream;
+import java.io.FileInputStream;
+import java.io.BufferedInputStream;
 
 public class TextPanel extends JPanel implements MouseInputListener {
     private JTextArea textArea;
@@ -39,8 +40,8 @@ public class TextPanel extends JPanel implements MouseInputListener {
 
     public static final Font loadFont() {
         try {
-            Font consolasFont = Font.createFont(Font.TRUETYPE_FONT, new File("./assets/fonts/CONSOLA.ttf"))
-                    .deriveFont(20.0f);
+            InputStream myStream = new BufferedInputStream(new FileInputStream("./assets/fonts/CONSOLA.TTF"));
+            Font consolasFont = Font.createFont(Font.TRUETYPE_FONT, myStream).deriveFont(20.0f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(consolasFont);
             return consolasFont;
@@ -51,8 +52,11 @@ public class TextPanel extends JPanel implements MouseInputListener {
     }
 
     private void scrollIfPossible() {
-        JScrollBar verticalScrollBar = getContainerPanel().getVerticalScrollBar();
-        System.out.println(verticalScrollBar.getValue());
+        JScrollBar verticalScrollBar = containerPanel.getVerticalScrollBar();
+        if (verticalScrollBar.getValue() + verticalScrollBar.getVisibleAmount() >= verticalScrollBar.getMaximum()) {
+            verticalScrollBar.setValue(0);
+            return;
+        }
         verticalScrollBar.setValue(verticalScrollBar.getValue() + 20);
     }
 
@@ -60,10 +64,6 @@ public class TextPanel extends JPanel implements MouseInputListener {
         containerPanel.setPreferredSize(new Dimension(getBounds().width, getBounds().height
                 - 10));
         add(containerPanel, BorderLayout.NORTH);
-    }
-
-    public JScrollPane getContainerPanel() {
-        return containerPanel;
     }
 
     @Override
