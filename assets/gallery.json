@@ -1,0 +1,52 @@
+[
+	{
+		"name": "Alan Turing",
+		"image": "turing.jpeg",
+		"info": "Turing’s genius inspired many civilians to join the war effort by assisting their respective countries in decrypting the messages sent between countries. Although mostly invisible, this hugely aided the Allies in their campaign against the Axis. Even today, we still take inspiration from Turing; not only did he contribute to the creation of modern cryptography, but he was also vastly thought of as the “Father of Computer Science.” Turing was one of the greatest technological pioneers of his time, and his accomplishments have become the cornerstone for modern technology."
+	},
+	{
+		"name": "Enigma",
+		"image": "enigma.jpeg",
+		"info": "German leaders poured countless amounts of resources and money into creating what they thought was an uncrackable code, secure enough to transmit important information between military leaders. However, their trust in this machinery ultimately led to the Axis powers' downfall. Because they believed that the code was uncrackable, they never even considered the possibility that the Enigma machine wasn’t perfect. When Turing and his team of mathematicians built Bombe, they were able to decrypt messages that were instrumental to the defeat of Germany. The Allied troops could be warned before an invasion, or they could even launch an attack somewhere the Axis thought insignificant. In conclusion, cracking Enigma proved to play a key role in the eventual end of the mayhem brought by WW2."
+	},
+	{
+		"name": "Juan Pujol García",
+		"image": "garcia.jpeg",
+		"info": "García’s efforts to thwart Germany heavily affected the outcome of World War II. While pretending to be in Germany’s service, García and his partner, Tomás Harris, fed Germany false information. Additionally, they were also able to convince Nazi leaders to believe that they had over 27 spies working for Hitler. This deception sabotaged Germany’s operations furthermore and paved the way to their most climatic scheme, the news of the Normandy’s invasion. When word got out of the Allies planned invasion on Normandy, García took the opportunity to reroute 19 infantry divisions and 2 armored divisions to the coast of Calais. The newly relocated Germans then waited for an attack that would never come. This deception ruined the German’s anticipation of the time, location, and the amount of troops that the Allies would send during the Invasion of Normandy. By tricking the Germans about the invasion, García ensured the pivotal victory against the Nazis. Without his efforts, the bloody Battle of Normandy might have been much worse for the Allies."
+	},
+	{
+		"name": "Josephine Baker",
+		"image": "baker.jpeg",
+		"info": "Spies added strength to a nation by providing intel and opportunities for sabotage. In World War II, information was a key aspect. With inside information, nations can strategize and win battles before the fight even begins. This inside information was only accessible through the subtle operations of espionage. In conjunction with intel, spies can also sabotage the enemy from within their home turf. The Allies' crucial success at D-Day was possible through the help of spies within Germany. These spies manipulated German intel of an attack that would take place on Normandy. By fiddling with the known time and date of the Normandy landings, the spies within Germany were able to weaken the nation’s defenses prior to the invasion. As devastating as the Invasion of Normandy was, it would have been much more disastrous for the Allies had the Germans been prepared and unwavered."
+	},
+	{
+		"name": "Morris Berg",
+		"image": "berg.jpeg",
+		"info": "Like Josephine Baker and Joseph Rochefort, Morris Berg was one of the most famous spies during World War II’s time. Most remarkably, his transition from Major League Baseball to espionage was a decision that set him apart from other candidates. Through German scientist Werner Heisenberg, Berg was able to learn that Germany did not have very large plans for an atomic bomb. Morris Berg’s information about the Germany’s progression on the atomic bomb allowed the Allies to place themselves in a position of advantage. With no German atomic bomb to be cautious of, the Allies were able to battle Germany without the worry of nuclear terror."
+	},
+	{
+		"name": "SIGABA",
+		"image": "sigaba.png",
+		"info": "The SIGABA was an American-made device that rivaled the Enigma in design and purpose. As the Germans began to send secret messages, the Allies felt the need to encrypt their own messages and further protect their communications. The SIGABA’s aim was identical to that of the Enigma, to securely send and receive intelligence. Unlike its German counterpart, its effectiveness would never give out; the SIGABA would remain unbroken until its declassification in the 20th century. Functioning exactly like the Enigma, the American device had no trouble safeguarding content. Although the number of SIGABAs produced never came close to the 20,000 Enigmas made, the SIGABA still added a sheet of protection that would help the Allies claim victory over the Axis Powers."
+	},
+	{
+		"name": "Bletchley Park",
+		"image": "bletchley.jpeg",
+		"info": "Bletchley Park was the centerpiece of encryption breakthroughs during World War II. The revolutionary Bombe was created on Bletchley Park’s premises by Alan Turing, George Welchman, and many other cryptanalysts. Had research of Bletchley Park not been present during World War II, the Allies would have never uncovered the vital information passed in Axis diplomatic discussions and reports. Moreover, the discoveries in Bletchley Park were estimated to abridge the war by 2 years. World War II’s death count had already reached over 70 million by the time the war ended; if Bletchley Park was not in action, numerous more deaths would have added to that statistic."
+	},
+	{
+		"name": "Bombe",
+		"image": "bombe.jpeg",
+		"info": "Arguably the most important device that ever came out of Bletchley Park, the Bombe remains as one of the most impressive feats of code-breaking to date. Tapping into enemy communications was an essential aspect of war that the Bombe opened for the Allies. Although the Axis Powers attempted to decode the Allies’ messages, none of their instruments came close to the productivity and efficiency of the American-made Bombe. It was through the Bombe’s success that the Allies were able to defeat the Axis Powers and release Europe from the Nazis’ cold grasp."
+	},
+	{
+		"name": "Virginia Hall",
+		"image": "hall.jpeg",
+		"info": "Espionage was extremely dangerous; deceiving the enemy during a time of great crisis is no easy feat. Despite all odds, Virginia Hall was able to support the Allies even with a missing leg. Covered under the night sky, she was able to arm 2,400 soldiers with weapons. Not only that, she also trained the battalions to use guerilla tactics-irregular fighting against a larger force. With such success, she was recognized for her actions and awarded the Distinguished Service Cross. Even with a missing leg, Virginia Hall achieved such great accomplishments and represented that even with terrible odds, victory is still within reach."
+	},
+	{
+		"name": "Joseph Rochefort",
+		"image": "rochefort.jpeg",
+		"info": "With the Nazis out of the way, the Allies focused their attention to the Pacific Front. Their enemy, the Japanese, have begun an offensive to the many islands within the Pacific. The Japanese had already captured many islands prior; the Allies knew that their enemy would attack soon, but to identify the Japanese’s next move was a shot in the dark. Luckily, the efforts of Joseph Rochefort would turn this guess into a certainty. Backed up by Fleet Admiral Chester Nimitz, Rochefort was able to intercept a Japanese message that announced the Japanese invasion of the Midway islands. With this crucial information, the Allies were able to anticipate and claim victory over the Japanese in the Battle of Midway, thus ending the war in the Pacific."
+	}
+]
