@@ -2,11 +2,14 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.JFrame;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -23,7 +26,7 @@ public class Gallery implements MouseListener {
         allPanels = new HashMap<String, JPanel>();
         parentFrame = new JFrame();
         parentFrame.addMouseListener(this);
-        parentFrame.setSize(new Dimension(1720, 1160));
+        parentFrame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         parentFrame.getContentPane().setBackground(Color.BLACK);
         parentPanel = new JLayeredPane();
         parentPanel.setPreferredSize(parentFrame.getSize());
@@ -39,7 +42,7 @@ public class Gallery implements MouseListener {
                 String name = map.get("name");
                 String info = map.get("info");
                 PreviewPanel preview = new PreviewPanel(name, info, backgroundImage);
-                preview.setBounds(location % 5 * 340 + 20, location / 5 * 540 + 40, 320, 500);
+                preview.setBounds(location % 5 * 220 + 20, location / 5 * 440 + 40, 200, 400);
                 allPanels.put(name, preview);
                 parentPanel.add(preview, JLayeredPane.DEFAULT_LAYER);
                 location++;
@@ -50,9 +53,14 @@ public class Gallery implements MouseListener {
     }
 
     public void displayParentFrame() {
-        parentFrame.add(parentPanel);
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        parentFrame.setUndecorated(true);
+        gd.setFullScreenWindow(parentFrame);
+        parentFrame.setResizable(false);
+        // parentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        parentFrame.getContentPane().add(parentPanel);
         parentFrame.setVisible(true);
-        parentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        parentFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         parentFrame.setLocationRelativeTo(null);
         parentFrame.pack();
     }

@@ -20,7 +20,7 @@ public class PreviewPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(320, 500);
+        return new Dimension(200, 400);
     }
 
     @Override
