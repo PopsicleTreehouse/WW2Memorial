@@ -27,7 +27,7 @@ public class TextPanel extends JPanel implements MouseInputListener {
         textArea.setFont(loadFont());
         textArea.setBackground(Color.BLACK);
         textArea.setForeground(new Color(51, 255, 51));
-        textArea.setBorder(new EmptyBorder(10, 3, 10, 0));
+        textArea.setBorder(new EmptyBorder(5, 3, 10, 0));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
         textArea.setEditable(false);

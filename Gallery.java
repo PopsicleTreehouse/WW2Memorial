@@ -3,7 +3,10 @@ import javax.imageio.ImageIO;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -28,7 +31,15 @@ public class Gallery implements MouseListener {
         parentFrame.addMouseListener(this);
         parentFrame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         parentFrame.getContentPane().setBackground(Color.BLACK);
-        parentPanel = new JLayeredPane();
+        parentPanel = new JLayeredPane() {
+            @Override
+            public void paintComponents(Graphics g) {
+                super.paintComponents(g);
+                g.setColor(Color.WHITE);
+                g.setFont(new Font("Times New Roman", 20, 20));
+                g.drawString("Brandon Yao", 0, 30);
+            }
+        };
         parentPanel.setPreferredSize(parentFrame.getSize());
         loadPanels();
     }
@@ -36,15 +47,21 @@ public class Gallery implements MouseListener {
     private void loadPanels() {
         try {
             int location = 0;
+            int width = Toolkit.getDefaultToolkit().getScreenSize().width;
             for (HashMap<String, String> map : loadFromJson()) {
                 File imageLocation = new File("./assets/images/" + map.get("image"));
                 BufferedImage backgroundImage = ImageIO.read(imageLocation);
                 String name = map.get("name");
                 String info = map.get("info");
                 PreviewPanel preview = new PreviewPanel(name, info, backgroundImage);
-                preview.setBounds(location % 5 * 220 + 20, location / 5 * 440 + 40, 200, 400);
-                allPanels.put(name, preview);
+                Dimension dim = preview.getPreferredSize();
+                int offsetX = (width - ((dim.width + 20) * 5)) / 2;
+                int offsetY = 40;
+                int x = location % 5 * (dim.width + 20) + offsetX;
+                int y = location / 5 * (dim.height + 40) + offsetY;
+                preview.setBounds(x, y, dim.width, dim.height);
                 parentPanel.add(preview, JLayeredPane.DEFAULT_LAYER);
+                allPanels.put(name, preview);
                 location++;
             }
         } catch (Exception e) {
@@ -57,7 +74,6 @@ public class Gallery implements MouseListener {
         parentFrame.setUndecorated(true);
         gd.setFullScreenWindow(parentFrame);
         parentFrame.setResizable(false);
-        // parentFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         parentFrame.getContentPane().add(parentPanel);
         parentFrame.setVisible(true);
         parentFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -69,7 +85,9 @@ public class Gallery implements MouseListener {
         presentedPanel = panel.getPanel();
         presentedPanel.setVisible(true);
         int height = presentedPanel.getPreferredSize().height;
-        presentedPanel.setBounds(300, 200, 1100, height);
+        int width = presentedPanel.getPreferredSize().width;
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        presentedPanel.setBounds((screenWidth - width) / 2 - 10, 200, 1100, height);
         presentedPanel.displayLabel();
         parentPanel.add(presentedPanel, JLayeredPane.POPUP_LAYER);
         parentFrame.pack();
